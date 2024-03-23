@@ -55,14 +55,14 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 100px;
+    border-radius: 50%;
     width: 100px;
 }
 
 #card {
     background-color: var(--color-dark-grey);
     border-radius: 20px;
-    width: 30%;
+    width: 400px;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
