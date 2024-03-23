@@ -2,19 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Challenge Navigator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        a {
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        a:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+    <title>Bootcamp content</title>
 </head>
 
 <body>
-    <ol>
-        <li>
-            <a href="./first_challenge/index.html">
-                <p>First Challenge</p>
-            </a>
-        </li>
-    </ol>
+    <h1>Infobrains web bootcamp 2024</h1>
+    <a href="./first_challenge/index.html">First challenge</a>
+    <a href="./second_challenge/index.html">Second challenge</a>
 </body>
 
 </html>
