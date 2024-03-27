@@ -51,12 +51,57 @@ body {
     text-align: center;
 }
 
-#card > img {
+#card > #pfp > #front-img > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    width: 100px;
+    width: 100%;
+}
+
+#card > #pfp > #back-img > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 100%;
+    height: 110px;
+}
+
+#pfp {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 110px;
+    transform-style: preserve-3d; /* to actually flip the img to the back-img,
+                                    not just flipping to a mirrored version of the front-img. */
+    transition: all 0.5s;
+}
+
+#pfp:hover {
+    transform: rotateY(180deg); /* to rotate to back-img when hovering on */
+}
+
+#front-img {
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+#back-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg); /* to rotate back to front-img when not hovering */
 }
 
 #card {
