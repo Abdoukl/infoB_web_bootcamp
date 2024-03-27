@@ -77,7 +77,7 @@ body {
     width: 110px;
     transform-style: preserve-3d; /* to actually flip the img to the back-img,
                                     not just flipping to a mirrored version of the front-img. */
-    transition: all 0.5s;
+    transition: all 0.7s;
 }
 
 #pfp:hover {
