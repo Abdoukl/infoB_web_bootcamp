@@ -26,6 +26,8 @@
 }
 
 body {
+    background-image: url('./imgs/bg-header-desktop.png');
+    background-repeat: no-repeat;
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight-reg);
@@ -49,14 +51,11 @@ body>div {
 }
 
 .header {
+    
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.header-bg {
-    position: absolute;
-    z-index: -1;
 }
 
 .header-logo {
@@ -103,7 +102,7 @@ a {
     box-shadow: 0px 3px 0px hsl(171, 66%, 35%);
 }
 
-.button-green:hover {
+.button-green:hover , .button-green:focus {
     box-shadow: 0 5px 8px var(--color-primary-strong-cyan), 0px 3px 0px hsl(0, 0%, 0%);
 }
 
@@ -112,7 +111,7 @@ a {
     box-shadow: 0px 3px 0px hsl(233, 100%, 63%);
 }
 
-.button-blue:hover {
+.button-blue:hover , .button-blue:focus {
     box-shadow: 0 5px 8px var(--color-primary-light-blue), 0px 3px 0px hsl(0, 0%, 0%);
 }
 
@@ -225,5 +224,73 @@ a {
 
     .socials {
         gap: 40px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    :root {
+        --font-size: 16px;
+        --main-p-width: auto;
+        --snips-p-width: auto;
+        --feats-p-width: auto;
+        --clipboard-p-width: auto;
+        --tools-p-width: auto;
+        --download-p-width: auto;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    body {
+        background-image: url('./imgs/bg-header-mobile.png');
+    }
+    body > * {
+        scale: 0.9;
+    }
+    body> div {
+        margin-bottom: 50px;
+    }
+    .things {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .tools {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        gap: 80px;
+    }
+    .feats {
+        margin: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 110px;
+    }
+    .feats-img {
+        width: 90vw;
+    }
+    .feats-text {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .tool {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer{
+        scale: 1;
+    }
+    .footer > * {
+        scale: 0.9;
     }
 }
