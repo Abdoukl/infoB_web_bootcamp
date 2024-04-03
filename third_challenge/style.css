@@ -51,7 +51,7 @@ body>div {
 }
 
 .header {
-    
+
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -102,7 +102,8 @@ a {
     box-shadow: 0px 3px 0px hsl(171, 66%, 35%);
 }
 
-.button-green:hover , .button-green:focus {
+.button-green:hover,
+.button-green:focus {
     box-shadow: 0 5px 8px var(--color-primary-strong-cyan), 0px 3px 0px hsl(0, 0%, 0%);
 }
 
@@ -111,7 +112,8 @@ a {
     box-shadow: 0px 3px 0px hsl(233, 100%, 63%);
 }
 
-.button-blue:hover , .button-blue:focus {
+.button-blue:hover,
+.button-blue:focus {
     box-shadow: 0 5px 8px var(--color-primary-light-blue), 0px 3px 0px hsl(0, 0%, 0%);
 }
 
@@ -237,20 +239,25 @@ a {
         --tools-p-width: auto;
         --download-p-width: auto;
     }
+
     .buttons {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
+
     body {
         background-image: url('./imgs/bg-header-mobile.png');
     }
-    body > * {
+
+    body>* {
         scale: 0.9;
     }
-    body> div {
+
+    body>div {
         margin-bottom: 50px;
     }
+
     .things {
         display: flex;
         flex-direction: column;
@@ -264,6 +271,7 @@ a {
         align-items: center;
         gap: 80px;
     }
+
     .feats {
         margin: auto;
         display: flex;
@@ -272,9 +280,11 @@ a {
         align-items: center;
         margin-bottom: 110px;
     }
+
     .feats-img {
         width: 90vw;
     }
+
     .feats-text {
         margin: auto;
         display: flex;
@@ -282,15 +292,18 @@ a {
         align-items: center;
         text-align: center;
     }
+
     .tool {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .footer{
+
+    .footer {
         scale: 1;
     }
-    .footer > * {
+
+    .footer>* {
         scale: 0.9;
     }
 }
