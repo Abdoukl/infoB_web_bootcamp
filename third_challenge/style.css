@@ -11,12 +11,12 @@
     --font-family: 'Bai Jamjuree', sans-serif;
     --font-weight-reg: 400;
     --font-weight-bold: 600;
-    --main-p-width: 650px;
-    --snips-p-width: 700px;
-    --feats-p-width: 380px;
-    --clipboard-p-width: 700px;
-    --tools-p-width: 400px;
-    --download-p-width: 700px;
+    --main-p-width: 45vw;
+    --snips-p-width: 53vw;
+    --feats-p-width: 29vw;
+    --clipboard-p-width: 54vw;
+    --tools-p-width: 29vw;
+    --download-p-width: 53vw;
 }
 
 * {
@@ -26,7 +26,6 @@
 }
 
 body {
-    /* line-height: normal; */
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight-reg);
@@ -35,18 +34,27 @@ body {
     height: 100vh;
     width: 100vw;
     text-align: center;
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
+    line-height: 30px;
 }
 
 body > div{
     margin-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-bg {
-    left: 0;
-    width: 100vw;
     position: absolute;
     z-index: -1;
 }
@@ -60,7 +68,7 @@ h1,
 h2,
 h3 {
     color: var(--color-neutral-dark-grayish-blue);
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 12px;
 }
 
@@ -109,28 +117,37 @@ a {
 }
 
 .feats {
-    margin-left: -188px;
+    margin-left: -15.5vw;
     display: flex;
+    flex-direction: row-reverse;
     text-align: left;
-    gap: 110px;
+    gap: 9vw;
 }
 
-.feats-text > p{
+.feats-img {
+    width: 57%;
+}
+
+.feats-text {
     width: var(--feats-p-width);
+    margin-top: -75px;
 }
 
 .clipboard > p {
     width: var(--clipboard-p-width);
-    margin: auto;
     margin-bottom: 100px;
+}
+
+.clipboard-img {
+    width: 100%;
 }
 
 .tools {
     margin-top: 80px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 30px;
 }
 
 .tool > p {
@@ -140,8 +157,10 @@ a {
 .things{
     margin-top: 100px;
     display: flex;
-    gap: 100px;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7vw;
 }
 
 .download > p {
@@ -150,20 +169,47 @@ a {
 }
 
 .footer {
-    margin-top: 100px;
+    margin-top: 50px;
+    padding: 25px 0;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 100px;
-    align-items: center;
     width: 100vw;
-    background-color: hsl(201, 11%, 95%);
+    background-color: hsl(201, 11%, 94%);
+    gap: 7vw;
 }
 
-.otehr > a {
+.other {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+}
+
+.other > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.other > div > a {
+    line-height: 17px;
     color: var(--color-neutral-dark-grayish-blue);
-    text-decoration: none;
 }
 
 .footer > img {
     width: 50px;
+}
+
+.socials{
+    display: flex;
+    gap: 20px;
+}
+
+.socials > a {
+    padding: 0;
 }
