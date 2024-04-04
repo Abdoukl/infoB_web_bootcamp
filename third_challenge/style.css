@@ -229,7 +229,7 @@ a {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
     :root {
         --font-size: 16px;
         --main-p-width: auto;
@@ -247,7 +247,7 @@ a {
     }
 
     body {
-        background-image: url('./imgs/bg-header-mobile.png');
+        background-image: url('./imgs/bg-header-desktop.png');
     }
 
     body>* {
