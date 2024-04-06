@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --color-primary-light-cyan: hsl(193, 38%, 86%);
+    --color-primary-neon-green: hsl(150, 100%, 66%);
+    --color-neutral-grayish-blue: hsl(217, 19%, 38%);
+    --color-neutral-dark-grayish-blue: hsl(217, 19%, 24%);
+    --color-neutral-dark-blue: hsl(218, 23%, 16%);
+    --font-size-quote: 28px;
+    --font-weight: 800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--color-neutral-dark-blue);
+    color: var(--color-primary-light-cyan);
+    font-size: var(--font-size-quote);
+    font-weight: var(--font-weight);
+    line-height: 1.5;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-neutral-dark-grayish-blue);
+    border-radius: 10px;
+    padding: 40px;
+    width: 500px;
+    height: fit-content;
+}
+
+.mobile_devider {
+    display: none;
+}
+
+.container > h6 {
+    color: var(--color-primary-neon-green);
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.container > q {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container > img {
+    margin-bottom: 30px;
+}
+
+.container > button {
+    background-color: var(--color-primary-neon-green);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    margin-bottom: -70px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 340px;
+    }
+    .desktop_devider {
+        display: none;
+    }
+    .mobile_devider {
+        display: block;
+    }
+}
