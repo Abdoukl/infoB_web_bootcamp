@@ -73,6 +73,11 @@ body {
     display: grid;
     place-items: center;
     margin-bottom: -70px;
+    transition: all 0.2s ease;
+}
+
+.container > button:hover {
+    box-shadow: 0 0 10px var(--color-primary-neon-green);
 }
 
 @media screen and (max-width: 768px) {
