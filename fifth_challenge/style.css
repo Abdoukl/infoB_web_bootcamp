@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-primary-one: hsl(6, 100%, 80%);
+    --color-primary-two: hsl(335, 100%, 65%);
+    --color-neutral-pale-blue: hsl(243, 100%, 93%);
+    --color-neutral-grayish-blue: hsl(229, 7%, 55%);
+    --color-neutral-dark-blue: hsl(228, 56%, 26%);
+    --color-neutral-very-dark-blue: hsl(229, 57%, 11%);
+
+    --font-size: 14px;
+    --font-famimy: "Raleway", sans-serif;
+    --font-weight-reg: 400;
+    --font-weight-bold: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--font-famimy);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-reg);
+    background-color: var(--color-neutral-very-dark-blue);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    background-image: url('./imgs/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-attachment: fixed;
+    background-position: bottom;
+    color: var(--color-neutral-pale-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-neutral-very-dark-blue);
+    padding: auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    transition: 0.3s all ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: var(--color-neutral-pale-blue);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 28vw 40vw; /*28vw 40vw*/
+    gap: 30px;
+}
+
+.container>div {
+    background-color: var(--color-neutral-dark-blue);
+    padding: 45px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.left {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 10px;
+    border-top-right-radius: 110px;
+}
+
+.stuff {
+    display: flex;
+    gap: 18px;
+}
+
+.right {
+    margin-top: auto;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--color-neutral-very-dark-blue);
+    border-radius: 10px;
+    display: grid;
+    align-content: center;
+    position: relative;
+}
+
+.bar::before{
+    content: '0 GB';
+    font-weight: var(--font-weight-bold);
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+}
+
+.bar::after{
+    content: '1000 GB';
+    font-weight: var(--font-weight-bold);
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+}
+
+@keyframes barFilling {
+    to {
+        width: 81.5%;
+    }
+}
+
+.filled_bar {
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+    margin: 3px;
+    background: linear-gradient(-90deg, var(--color-primary-two), var(--color-primary-one));
+    animation: barFilling 1.5s ease forwards;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.storage_used>span {
+    font-weight: var(--font-weight-bold);
+}
+
+.min_max>p {
+    font-weight: var(--font-weight-bold);
+}
+
+.min_max {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.bubble {
+    background-color: white;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    padding: 10px 25px;
+    width: fit-content;
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    top: -45px;
+    right: 40px;
+
+}
+
+@property --gb-left {
+    syntax: "<integer>";
+    initial-value: 999;
+    inherits: false;
+}
+
+@keyframes gb-left-counter {
+    from {
+        --gb-left: 999;
+    }
+    to {
+        --gb-left: 185;
+    }
+}
+
+strong {
+    animation: gb-left-counter 1.5s ease-in-out forwards;
+    counter-set: num var(--gb-left);
+}
+
+strong::after {
+    content: counter(num);
+}
+
+@property --gb-used {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+@keyframes gb-used-counter {
+    from {
+        --gb-used: 0;
+    }
+    to {
+        --gb-used: 815;
+    }
+}
+
+.storage_used > span {
+    animation: gb-used-counter 1.5s ease-in-out forwards;
+    counter-set: num var(--gb-used);
+}
+
+.storage_used > span::before {
+    content: counter(num);
+}
+
+.arrow_left {
+    width: 25px;
+    height: 25px;
+    border-top: 0px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-right: 25px solid white;
+    position: absolute;
+    bottom: -24px;
+    right: 0;
+}
+
+.bubble strong {
+    color: black;
+    font-size: 2.5rem;
+}
+
+.bubble>p {
+    color: var(--color-neutral-grayish-blue);
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-image: url('./imgs/bg-mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: bottom;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .right {
+        align-items: center;
+        height: 170px;
+    }
+    .arrow_left {
+        display: none;
+    }
+    .bubble {
+        top: auto;
+        bottom: -35px;
+        border-radius: 10px;
+        right: auto;
+    }
+}
